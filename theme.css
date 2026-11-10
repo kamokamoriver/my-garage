@@ -1,0 +1,5 @@
+/* 本文（.prose）のサイズと色。Blumeの既定は 0.875rem(14px)・薄いグレー */
+.prose {
+  font-size: 1.125rem;
+  color: var(--blume-foreground);
+}

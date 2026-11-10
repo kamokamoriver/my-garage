@@ -1,0 +1,69 @@
+---
+title: Libcararian
+---
+
+楽譜PDFを結合して小冊子（B4見開き・中綴じ）にしたり、曲ごと・ページごとのPDFに分けたりするWebアプリです。デスクトップ版 Libcararian（Python）をWebに移したもので、印刷結果は現行版と同じです。
+
+<CardGroup cols={2}>
+  <Card title="アプリを開く" href="https://kamokamoriver.github.io/libcararian-web/" icon="rocket">
+    ブラウザですぐに使えます。
+  </Card>
+  <Card title="ソースコード" href="https://github.com/kamokamoriver/libcararian-web" icon="github">
+    GitHub で公開しています。
+  </Card>
+</CardGroup>
+
+
+## 主な機能
+
+<CardGroup cols={2}>
+  <Card title="結合・小冊子" icon="folder">
+    複数の楽譜PDFを1つにまとめ、B4見開き・中綴じの小冊子にできます。
+  </Card>
+  <Card title="曲ごと・ページごとに分割" icon="folder">
+    曲単位・ページ単位のPDFに分け、ZIPでまとめて保存できます。
+  </Card>
+  <Card title="並べ替え・白紙・回転" icon="folder">
+    ファイルをドラッグで並べ替え、ページ間への白紙挿入や回転ができます。
+  </Card>
+  <Card title="プライバシー" icon="folder">
+    処理はすべてブラウザ内で完結し、ファイルは外部に送信されません。
+  </Card>
+</CardGroup>
+
+## 使い方
+
+<Steps>
+  <Step title="PDFを追加する">
+    [アプリ](https://kamokamoriver.github.io/libcararian-web/)を開き、「PDFを追加」を押すか画面にPDFをドロップします。全ページがファイルごとに並びます。
+  </Step>
+  <Step title="並べ替え・調整する">
+    番号（01, 02…）をドラッグして並べ替えます（「名前順」も可）。ページの間の「＋」で白紙を入れ、「回転」「全ページ回転」で向きを直します。
+  </Step>
+  <Step title="出力方法を選ぶ">
+    右の設定パネルで、結合・小冊子／曲ごと／ページごとのいずれかを選んで設定します。
+  </Step>
+  <Step title="確認してダウンロードする">
+    「確認」で出力結果を確かめてから「ダウンロード」を押します。結合・小冊子はPDF、曲ごと・ページごとはZIPで保存されます。
+  </Step>
+</Steps>
+
+## 注意点
+
+- 追加したPDFと設定は保存されません。ページを再読み込みすると消えます。
+- ページ単位の削除と並べ替えは、まだできません。
+- パスワードで保護されたPDFは読み込めません。
+- 数百ページの出力には時間がかかります（目安：300ページで約10秒）。
+
+## 技術メモ
+
+| 項目 | 内容 |
+| --- | --- |
+| 構成 | Vite + React + TypeScript |
+| 状態管理 | Zustand |
+| PDF生成 | pdf-lib（Web Worker で処理） |
+| PDF読み込み | pdf.js |
+| ZIP生成 | fflate |
+| 並べ替え | dnd-kit |
+| テスト | Vitest / Playwright / デスクトップ版との出力比較 |
+| ホスティング | GitHub Pages（main へ push で自動デプロイ） |

@@ -1,0 +1,52 @@
+---
+title: PDF割付ツール
+---
+
+両面印刷用のPDFを、大きい用紙に同じページを複数面割り付けた印刷用PDFに変換するWebアプリです。裁断すれば複数部の冊子が一度に作れます。
+
+<CardGroup cols={2}>
+  <Card title="アプリを開く" href="https://kamokamoriver.github.io/pdf_allocator/" icon="rocket">
+    ブラウザですぐに使えます。
+  </Card>
+</CardGroup>
+
+
+## 主な機能
+
+<CardGroup cols={2}>
+  <Card title="面付けの計算" icon="folder">
+    1枚あたりの面数・配置・拡大縮小・回転を自動で計算します。
+  </Card>
+  <Card title="プレビュー" icon="folder">
+    仕上がりをブラウザ上で確認できます。
+  </Card>
+  <Card title="PDFダウンロード" icon="folder">
+    割り付け済みのPDFをそのまま保存できます。
+  </Card>
+  <Card title="プライバシー" icon="folder">
+    処理はすべてブラウザ内で完結し、ファイルは外部に送信されません。
+  </Card>
+</CardGroup>
+
+## 使い方
+
+<Steps>
+  <Step title="アプリを開く">
+    [アプリ](https://kamokamoriver.github.io/pdf_allocator/)にブラウザでアクセスします。
+  </Step>
+  <Step title="PDFを読み込む">
+    元のPDFを読み込み、用紙サイズなどを設定します。
+  </Step>
+  <Step title="印刷する">
+    プレビューを確認し、PDFをダウンロードして印刷します。
+  </Step>
+</Steps>
+
+## 技術メモ
+
+| 項目 | 内容 |
+| --- | --- |
+| 構成 | HTML / CSS / JavaScript のみ（ビルド不要） |
+| PDF生成 | pdf-lib |
+| PDF読み込み | pdf.js |
+| ホスティング | GitHub Pages|
